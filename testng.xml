@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" parallel="tests" thread-count="1">
+    <test name="GoogleTests">
+        <classes>
+            <class name="GoogleTest"/>
+        </classes>
+    </test>
+    <test name="Test">
+        <parameter name="username" value="admin"/>
+        <parameter name="password" value="1234"/>
+        <classes>
+            <class name="com.test.LoginTest"/>
+        </classes>
+    </test>
+    <test name="SanityTests">
+        <groups>
+            <run>
+                <include name="sanity"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="GroupExample"/>
+        </classes>
+    </test>
+</suite>
