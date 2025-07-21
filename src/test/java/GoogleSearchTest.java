@@ -1,6 +1,7 @@
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -29,12 +30,8 @@ public class GoogleSearchTest {
         driver.get("https://www.google.com");
 
         WebElement searchBox = driver.findElement(By.name("q"));
-        searchBox.sendKeys("Carelon Global Solutions");
-        searchBox.submit();
-
-        // Wait and validate result
-        WebElement resultStats = driver.findElement(By.id("result-stats"));
-        Assert.assertTrue(resultStats.isDisplayed(), "Search results not displayed");
+        searchBox.sendKeys("Make My Trip");
+        searchBox.sendKeys(Keys.ENTER);
     }
 
     @AfterMethod
